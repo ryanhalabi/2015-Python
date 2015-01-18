@@ -104,7 +104,7 @@ tobparams = {'sector_desc': 'CROPS',
 
 tob = query(tobparams)
 
-pprint.pprint(tob)
+#pprint.pprint(tob)
 
 tobvalue = {x['state_alpha']: x['Value'] for x in tob['data']}
 #print(tob['data'])
