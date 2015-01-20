@@ -86,17 +86,17 @@ def query(parameters, key=usda_key):
 #yearvalue = {x['year']: x['Value'] for x in yolorice['data']}
 
 
-#print(  get_param_values('class_desc'))
+#print(  get_param_values('statisticcat_desc'))
 
 
-tobparams = {'sector_desc': 'CROPS',
-                  'commodity_desc' : 'TOBACCO',
+tobparams = {     'sector_desc' : 'CROPS',
+		  'commodity_desc' : 'TOBACCO',
                   'year': '2012',
-                  'statisticcat_desc' : 'PRODUCTION',
+                 'statisticcat_desc' : 'PRODUCTION',
                   'unit_desc': '$',
-#                  'state_alpha' : 'PA',
+#                 'state_alpha' : 'PA',
                   'class_desc' : 'ALL CLASSES'
-
+		  
                   }
 
 
@@ -120,6 +120,7 @@ tobvalue = {x['state_alpha']: x['Value'] for x in tob['data']}
 for x in tob['data']:
     print( x['state_alpha'] )
     print(x['Value'] )
+    print(x['statisticcat_desc'])
 #    patotal = patotal+ x['Value']
 
 #print(patotal)
