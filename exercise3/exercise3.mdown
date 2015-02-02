@@ -1,0 +1,44 @@
+# Exercise 3 - War and Peace and Text
+
+In this exercise we'll use Python to read the book 'War and Peace'
+and create a graph of character relationships using `networkx`.
+
+The goal of this assignment are:
+- become more comfortable working with text 
+- think about data sources in a new way
+- gain confidence in building graphs
+
+### Download data
+
+Download the text for 'War and Peace' from Project Gutenberg at 
+https://www.gutenberg.org/cache/epub/2600/pg2600.txt
+
+### Regular Expressions
+
+Use the regular expression that we wrote in class to find all the
+characters / places. Note that it may need some modification so that it
+doesn't pick up the space in front. You'll also need to modify it to work
+with other sentence delimiters besides '.'. Consider '?' and '!'.
+
+Note- this doesn't have to be perfect. You're going to pick up names of
+places and words like 'Prince'. That's ok.
+
+### Count appearances
+
+Count the number of times that each character/name appears in the text. 
+Which are the top 10 and what are their counts?
+
+### Together in sentences
+
+Use the list of names to build an undirected graph in networkx. 
+Weight each edge according to the number of times that the two appear in
+the same sentence together. For example, if 'Sonya' and 'Lisa' appear
+together in 20 sentences, then the weight of that edge should be 20.
+
+## Visualize
+
+Use `networkx` to visualize the top 10 characters. Let the appearance count
+determine the size of the node.
+Use the weight of the edge to determine the aesthetics of the line. 
+Something like this:
+http://networkx.github.io/documentation/networkx-1.9.1/examples/drawing/weighted_graph.html
