@@ -1,3 +1,17 @@
+import pandas as pd
+
+titanic = pd.read_csv('titanic.csv')
+
+y = titanic['Survived']
+
+features = ['Pclass', 'SibSp', 'Parch', 'Fare']
+
+X = titanic[features].copy()
+
+X['Sex'], genders = pd.factorize(titanic['Sex'])
+
+
+
 ##################################################
 # 
 # 1) Prepare the data
@@ -17,6 +31,17 @@
 # 
 ##################################################
 
+
+from sklearn.ensemble import RandomForestClassifier
+
+rfmod = RandomForestClassifier()
+
+rfmod.fit(X,y)
+
+
+
+from sklearn.cross_validation import cross_val_score
+scores = cross_val_score(rfmod,X,y,cv = 10)
 
 
 ##################################################

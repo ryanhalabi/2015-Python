@@ -28,9 +28,15 @@ names = 'Nick Clark Rick Qi'.split(' ')
 
 namepairs = set(combinations(names, 2))
 
+
+
+
+
 pattern = re.compile(r'''
         [^^]        # Not the beginning of a string
         (?<!\.\s)   # Exclude the period
+        (?<!\!\s)   # Exclude the !
+        (?<!\?\s)   # Exclude the ?
         [A-Z]       # A single capital letter
         [a-z]{1,}   # Rest of the word
 ''', flags=re.VERBOSE)
@@ -38,8 +44,9 @@ pattern = re.compile(r'''
 pattern2 = re.compile(r'[^^](?<!\.\s)[A-Z][a-z]{1,}')
 
 
-s = '''The teachers are Nick and Clark.
-The students include Rick and Qi.
+s = '''The teachers are Nick and Clark?
+The students include Rick and Qi!
+They sure are lame Nicks.
 '''
 
 print(pattern.findall(s))
